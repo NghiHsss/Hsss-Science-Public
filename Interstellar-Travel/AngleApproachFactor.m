@@ -4,12 +4,15 @@
 % Website:  https://www.hsss.science/
 % Repo:     https://github.com/NghiHsss/Hsss-Science-Public
 % Release:  MIT License
-% Date:     22 January 2023
-% Version:  1.00
+% Date:     31 January 2023
+% Version:  1.10
 %
 % Original  Timofey G.
 %   Program for angle of course from change of intensity
 %   Initial 19/12/2022
+%
+% Version Control
+%   1.10     Change plots to subplots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all;
 clc;
@@ -36,14 +39,15 @@ alpha_BlueStar = acosd((dl_BlueStar/lambda_BlueStar)*(1-1/gamma^2)^(-1/2));
 alpha_YellowStar = acosd((dl_YellowStar/lambda_YellowStar)*(1-1/gamma^2)^(-1/2));
 alpha_RedStar = acosd((dl_RedStar/lambda_RedStar)*(1-1/gamma^2)^(-1/2));
 
-% Plot output for Case 0.1C
+% Plot output for Case 0.1c
 figure(1)
+subplot(1,2,1);
 plot(alpha_BlueStar, -dl_BlueStar, alpha_RedStar, -dl_RedStar, alpha_YellowStar, -dl_YellowStar);
 grid on;
 xlabel('Approach Angle \theta (degree)');
 ylabel('Peak Wavelength Shift (nm)');
 legend('Blue = 475nm ', 'Red = 650nm', 'Yellow = 570nm ');
-title('Traveling Speed at 0.1C')
+title('Traveling Speed at 0.1c')
 
 
 
@@ -64,11 +68,11 @@ alpha_BlueStar = acosd((dl_BlueStar/lambda_BlueStar)*(1-1/gamma^2)^(-1/2));
 alpha_YellowStar = acosd((dl_YellowStar/lambda_YellowStar)*(1-1/gamma^2)^(-1/2));
 alpha_RedStar = acosd((dl_RedStar/lambda_RedStar)*(1-1/gamma^2)^(-1/2));
 
-% Plot output for Case 0.5C
-figure(2)
+% Plot output for Case 0.5c
+subplot(1,2,2);
 plot(alpha_BlueStar, -dl_BlueStar, alpha_RedStar, -dl_RedStar, alpha_YellowStar, -dl_YellowStar);
 grid on;
 xlabel('Approach Angle \theta (degree)');
 ylabel('Peak Wavelength Shift (nm)');
 legend('Blue = 475nm ', 'Red = 650nm', 'Yellow = 570nm ');
-title('Traveling Speed at 0.5C')
+title('Traveling Speed at 0.5c')
